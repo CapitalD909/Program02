@@ -146,7 +146,7 @@ Date::Date(unsigned m, unsigned d, unsigned y) {
 Date::Date(const string &mn, unsigned d, unsigned y){
     month = number(mn);
     year = y;
-    if (month == 0) {
+    if (month <= 0) {
         month = 1;
     }
     if (month > 12) {
@@ -167,6 +167,7 @@ Date::Date(const string &mn, unsigned d, unsigned y){
         cout << "Invalid month name: the Date was set to " << month << '/' << day << '/' << year << '.'<< endl;
         return;
     }
+    
     if(day != d){
          cout << "Invalid date values: Date corrected to " << month << '/' << day << '/' << year << '.' <<  endl;
        }
